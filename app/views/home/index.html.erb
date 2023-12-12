@@ -1,0 +1,25 @@
+<div data-controller="dropdown">
+    <h1>Home#index</h1>
+    <button data-action="click->dropdown#openDropdown" data-dropdown-target= "openButton">
+        <%# click 시 dropdown컨트롤러의 openDropdown함수실행 %>
+        open
+    </button>
+    <button data-action="click->dropdown#closeDropdown" data-dropdown-target= "closeButton">
+        <%# click 시 dropdown컨트롤러의 closeDropdown함수실행 %>
+        close
+    </button>
+    <div data-dropdown-target="dropdownContent">
+        <p>Find me in app/views/home/index.html.erb</p>
+    </div> 
+</div>
+
+<div id="options" data-controller="visibility">
+  <h1>Toggle Visibility</h1>
+  
+  <button data-action="visibility#showTargets">Show All Elements</button>
+  <button data-action="visibility#hideTargets">Hide All Elements</button>
+  <button data-action="visibility#toggleTargets">Toggle Element Visibility</button>
+    
+  <p data-visibility-target="hideable">The Flamboyent Thing #1<p/>
+  <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2<p/>
+</div>
