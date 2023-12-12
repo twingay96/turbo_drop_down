@@ -4,21 +4,35 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["dropdownContent","openButton","closeButton"]
   connect(){
-    this.dropdownContentTarget.hidden = true
-    // <div data-dropdown-target="dropdownContent">을 숨김
-    this.closeButtonTarget.hidden = true
+    this.closeDropdown()
+  }
+  toggleDropdown(){
+    if(this.dropdownContentTarget.hidden == true){
+      this.openDropdown()
+    } else {
+      this.closeDropdown()
+    }
+    
   }
   openDropdown(){
     this.openButtonTarget.hidden= true
-    this.dropdownContentTarget.hidden = false
-    this.closeButtonTarget.hidden = false
+    try{
+      this.dropdownContentTarget.hidden = false
+      this.closeButtonTarget.hidden = false
+    } catch{
+      // try {} 내부 코드실행중 오류발생시 catch{} 내부코드 실행
+    }
+
     
     
   }
   closeDropdown(){
     this.dropdownContentTarget.hidden = true
-    this.openButtonTarget.hidden = false
-    this.closeButtonTarget.hidden= true
+    try{
+      this.openButtonTarget.hidden = false
+      this.closeButtonTarget.hidden= true
+    } catch{}
+ 
 
   }
 

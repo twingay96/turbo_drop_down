@@ -1,17 +1,29 @@
+<style>
+    [role="button"]{
+        cursor: pointer;
+    }
+</style>
 <div data-controller="dropdown">
     <h1>Home#index</h1>
+    <div role="button" data-action="click->dropdown#toggleDropdown">
+        click_toggle
+    </div>
+
     <button data-action="click->dropdown#openDropdown" data-dropdown-target= "openButton">
         <%# click 시 dropdown컨트롤러의 openDropdown함수실행 %>
         open
     </button>
+
     <button data-action="click->dropdown#closeDropdown" data-dropdown-target= "closeButton">
         <%# click 시 dropdown컨트롤러의 closeDropdown함수실행 %>
         close
     </button>
+    
     <div data-dropdown-target="dropdownContent">
         <p>Find me in app/views/home/index.html.erb</p>
     </div> 
 </div>
+
 
 <div id="options" data-controller="visibility">
   <h1>Toggle Visibility</h1>
@@ -23,3 +35,9 @@
   <p data-visibility-target="hideable">The Flamboyent Thing #1<p/>
   <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2<p/>
 </div>
+
+<script>
+    // document.querySelector('[role="button"]').addEventListener('click', function() {
+    //     alert('Button clicked!');
+    //     });
+</script>
