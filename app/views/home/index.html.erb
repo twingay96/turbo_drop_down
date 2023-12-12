@@ -2,10 +2,13 @@
     [role="button"]{
         cursor: pointer;
     }
+
 </style>
-<div data-controller="dropdown">
+<div data-controller="dropdown" data-dropdown-open-value ="true">
+    <%# static values = {open: Boolean}을통해 HTML 마크업에서 데이터 속성(data-)을 통해 컨트롤러에 불리언 값이 전달 %>
+    <%#  data-controller="example" data-example-open-value="true"와 같이 사용 %>
     <h1>Home#index</h1>
-    <div role="button" data-action="click->dropdown#toggleDropdown">
+    <div role="button" data-action="click->dropdown#toggleDropdown" data-dropdown-target ="active">
         click_toggle
     </div>
 
@@ -18,9 +21,9 @@
         <%# click 시 dropdown컨트롤러의 closeDropdown함수실행 %>
         close
     </button>
-    
+
     <div data-dropdown-target="dropdownContent">
-        <p>Find me in app/views/home/index.html.erb</p>
+        <p>Find me in app/views/home/index.html.erb</p> 
     </div> 
 </div>
 
@@ -32,8 +35,8 @@
   <button data-action="visibility#hideTargets">Hide All Elements</button>
   <button data-action="visibility#toggleTargets">Toggle Element Visibility</button>
     
-  <p data-visibility-target="hideable">The Flamboyent Thing #1<p/>
-  <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2<p/>
+  <p data-visibility-target="hideable">The Flamboyent Thing #1</p>
+  <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2</p>
 </div>
 
 <script>
