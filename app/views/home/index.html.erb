@@ -2,6 +2,9 @@
     [role="button"]{
         cursor: pointer;
     }
+    .hidden {
+        display: none;
+        }
 
 </style>
 <div data-controller="dropdown" data-dropdown-open-value ="true">
@@ -19,11 +22,11 @@
 </div>
 
 <div data-controller="dropdown" data-dropdown-open-value ="false">
-    <div role="button" data-action="mouseenter->dropdown#toggleDropdown">
+    <div role="button" data-action="mouseover->dropdown#mouseOver mouseout->dropdown#mouseOut" >
         hover
     </div>
     
-    <div data-dropdown-target="dropdownContent">
+    <div data-dropdown-target="dropdownContent" class="hidden">
         <p>hover me</p> 
     </div> 
     
